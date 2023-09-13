@@ -1,0 +1,132 @@
+@font-face {
+  font-family: "Gibson";
+  src: local("Gibson"), url(../fonts/Gibson-Regular.otf) format("opentype");
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+
+body {
+  margin: 0;
+  font-family: "Gibson", sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+} */
+
+.ant-tabs-content {
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 0px 10px 10px 10px;
+}
+
+.ant-picker .ant-picker-input span.ant-picker-suffix,
+.ant-picker.ant-picker-range span.ant-picker-suffix {
+  margin-left: 1px;
+  margin-right: 10px;
+  order: -1;
+}
+.ant-picker {
+  background-color: transparent;
+}
+
+.ant-picker-range-separator {
+  margin-right: 30px;
+}
+
+.ant-picker-active-bar {
+  width: 50% !important;
+}
+
+.ant-picker:hover {
+  border-color: rgb(0, 0, 0);
+}
+.ant-picker-suffix {
+  color: rgba(0, 0, 0, 0.54) !important;
+}
+
+.css-bhp9pd-MuiPaper-root-MuiCard-root {
+  text-align: center;
+}
+
+.is-sticky {
+  position: fixed;
+  top: 54px;
+  z-index: 999;
+  animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+}
+
+@media (max-width: 700px) {
+  .ant-picker-panels {
+    flex-direction: column;
+  }
+}
+
+main {
+  background-color: #ffffff !important;
+}
+
+.title-cell {
+  padding-bottom: 0px !important;
+  padding-top: 0px !important;
+}
+
+.account-button {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .print {
+    display: block !important;
+  }
+}
+
+.gm-style-mtc,
+.gm-svpc,
+.gm-style-cc {
+  display: none;
+}
+
+a[title^="Open this area in Google Maps (opens a new window)"] {
+  display: none !important;
+}
+
+.ribbon-horizontal {
+  position: absolute;
+  left: 0;
+  bottom: 32px;
+  border: 11px solid #fdda24;
+  border-left: 0;
+  border-right: 10px solid transparent;
+  height: 0;
+  line-height: 0;
+  width: 100px;
+  color: #003865;
+  z-index: 1;
+  -webkit-filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+.ribbon-horizontal span {
+  position: relative;
+  padding: 0 4px 0 10px;
+  text-align: center;
+}
+
+.password-container {
+  position: relative;
+  width: 100%;
+}
+
+.fa-eye {
+  position: absolute;
+  top: 20%;
+  right: 3%;
+  cursor: pointer;
+  color: lightgray;
+}

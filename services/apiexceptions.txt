@@ -1,0 +1,81 @@
+Ticket -controller
+    /ticket/check-in -PUT
+        400 -Bad Request -String:“Tickets could not be checked in”
+        400 -Bad Request -String:”Ticket:” + ticket.toString() + “ is already checked in”
+        400 -Bad Request -String:”Ticket:”+ ticket.toString() + “ cannot be checked in, try again within 24 hours of flight”
+        404 -Not Found -String:”Tickets with flight:” + flightId + “ not found”
+
+    /ticket -GET
+        404 -Not Found -String:”Tickets not found”
+
+    /ticket/{id} -GET
+        404 -Not Found -String:”Ticket with id:” + id + “ not found”
+    
+Customer -controller
+    /customer/{id} -GET
+        404 -Not Found -String:“Customer with id:” + id + “ not found”
+        
+    /customer/{id} -PUT
+        404 -Not Found -String:“Customer with id: + id + “ not found”
+
+    /customer -GET
+        404 -Not Found -String:“Customers not found”
+        
+    /customer/search/{email} -GET
+        404 -Not Found -String:“Customer with email:” + email + “ not found"
+    
+User -controller
+    /user/register -POST
+        409 -Conflict -String:“Email exists already”
+
+    /user/logout -POST
+
+    /user/login -POST
+        401 -Unauthorized -String:“Incorrect Credentials”
+        
+    /user/details -POST
+        400 -Bad Request -String:"Invalid jwt token"
+        404 -Not Found -String:“Customer not found”
+        404 -Not Found -String: “Itinerary not found”
+        404 -Not Found -String:“No itinerary with id “ + id.toString()
+        404 -Not Found -String:“No flights for itinerary”
+
+Itinerary -controller
+    /itinerary/check-in -POST
+        400 -Bad Request -String:”Last name:” + checkIn.getLastName() + “ does not match itinerary id:” + itinerary.getItineraryId()
+        404 -Not Found -String:”Itinerary with id:” + checkIn.getItineraryId() + “ not found”
+        404 -Not Found -String:”Customer with id:” + id + “ not found"
+        404 -Not Found -String:”Customers with itinerary id:” + checkIn.getItineraryId() + “ not found”
+        404 -Not Found -String:”Tickets with itinerary:” + itinerary.toString() + “ not found”
+        404 -Not Found -String:”Flights with itinerary:” itinerary.toString() + “ not found”
+        404 -Not Found -String:”No outbound tickets found"
+        406 -Not Acceptable -String:”Expected no inbound trips, but got:” + inboundTrips.toString()
+
+    /itinerary/{id} -GET
+        404 -Not Found -String:“Itinerary with id:” + id “ not found”
+
+Flight-controller
+    /flight/search -POST
+        404 -Not Found -String:”Flights from: “ + srcAirport + “ To:” + destAirport + “ on:” + deptTime
+        404 -Not Found -String:”Flights from: “ + destAirport + “ To:” + srcAirport + “ on:” + arvTime
+        
+    /flight/book -POST
+        400 -BadRequestException -String:”The “ + seatSection + “ section of this flight is full”
+        400 -BadRequestException -String:”Itinerary could not be created from:” + bookRequest.toString()
+    
+    /flight -GET
+        404 -Not Found -String:“Flights not found”
+    
+    /flight/{id} -GET
+        404 -Not Found -String:“Flight with id:” + id “ not found”
+        
+Airport -controller
+    /airport -GET
+        404 -Not Found -String:”Airports not found”
+
+Airplane -controller
+    /airplane -GET
+        404 -Not Found -String:”Airplanes not found”
+    
+    /airplane/search -GET
+        404 -Not Found -String:”Airplane with id:” + id + “ not found”
