@@ -9,3 +9,18 @@ A full-stack Web application for an airline and with a booking system
 Includes a web front-end written using React, a Spring Boot back-end, ML based chatbot using Python and a normalized MySQL database 
 
 Also uses third-party APIs such as Google Maps
+
+
+
+
+## Screenshots:
+
+![main](https://github.com/enfuka/CapAir/blob/f3d01b9826f9ccd79d592738586679b411d68f3b/screenshots/desktop_screenshot_main.jpg?raw=true)
+
+![search](https://github.com/enfuka/CapAir/blob/f3d01b9826f9ccd79d592738586679b411d68f3b/screenshots/desktop_screenshot_search.jpg?raw=true)
+
+![conf](https://github.com/enfuka/CapAir/blob/f3d01b9826f9ccd79d592738586679b411d68f3b/screenshots/desktop_screenshot_confirmation.jpg?raw=true)
+
+![bp](https://github.com/enfuka/CapAir/blob/f3d01b9826f9ccd79d592738586679b411d68f3b/screenshots/desktop_screenshot_bp.png?raw=true)
+
+![bpm](https://github.com/enfuka/CapAir/blob/f3d01b9826f9ccd79d592738586679b411d68f3b/screenshots/mobile_screenshot_bp.png?raw=true)
